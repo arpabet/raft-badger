@@ -2,7 +2,7 @@ module go.arpabet.com/raft-badger
 
 go 1.14
 
-replace github.com/dgraph-io/badger => go.arpabet.com/badger/v2 v2.0.3-multi
+replace github.com/dgraph-io/badger/v2 => github.com/arpabet/badger/v2 v2.0.3-mu
 
 require (
 	github.com/dgraph-io/badger/v2 v2.0.3
