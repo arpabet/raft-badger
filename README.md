@@ -1,2 +1,7 @@
 # raft-badger
-Raft Badger Bindings
+raft-badger
+
+```
+    raft_badger.NewLogStore(db, []byte("log"))
+    raft_badger.NewStableStore(db, []byte("conf"))
+```

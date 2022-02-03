@@ -1,0 +1,22 @@
+syntax = "proto3";
+option go_package = "go.arpabet.com/raft-badger";
+
+package raftbadger;
+
+enum RaftLogType {
+	LogCommand = 0;
+	LogNoop = 1;
+	LogAddPeerDeprecated = 2;
+	LogRemovePeerDeprecated = 3;
+	LogBarrier = 4;
+	LogConfiguration = 5;
+}
+
+message RaftLog {
+    uint64   index = 1;
+    uint64   term = 2;
+	RaftLogType  type = 3;
+	bytes    data = 4;
+	bytes    extensions = 5;
+}
+
