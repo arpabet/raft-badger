@@ -21,7 +21,7 @@ package raft_badger
 import (
 	"encoding/binary"
 	"github.com/dgraph-io/badger/v2"
-	"github.com/golang/protobuf/proto"
+	"google.golang.org/protobuf/proto"
 	"github.com/hashicorp/raft"
 )
 
