@@ -1,12 +1,12 @@
 /*
- * Copyright (c) 2023 Zander Schwid & Co. LLC.
+ * Copyright (c) 2025 Karagatan LLC.
  * SPDX-License-Identifier: BUSL-1.1
  */
 
 package raftbadger_test
 
 import (
-	"github.com/sprintframework/raft-badger"
+	"go.arpabet.com/raft-badger"
 	"github.com/dgraph-io/badger/v3"
 	"github.com/stretchr/testify/require"
 	"io/ioutil"
