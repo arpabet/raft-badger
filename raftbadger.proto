@@ -14,7 +14,7 @@
 
 syntax = "proto3";
 
-option go_package = "github.com/codeallergy/raftbadger";
+option go_package = "go.arpabet.com/raft-badger;raftbadger";
 
 package raftbadger;
 
@@ -33,5 +33,8 @@ message RaftLog {
 	RaftLogType  type = 3;
 	bytes    data = 4;
 	bytes    extensions = 5;
+	// appended_at is the time the leader first appended this entry, stored as
+	// Unix nanoseconds. 0 means unset (raft.Log.AppendedAt was the zero time).
+	int64    appended_at = 6;
 }
 
