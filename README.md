@@ -1,5 +1,8 @@
 # raft-badger
 
+[![CI](https://github.com/arpabet/raft-badger/actions/workflows/ci.yml/badge.svg)](https://github.com/arpabet/raft-badger/actions/workflows/ci.yml)
+[![Go Reference](https://pkg.go.dev/badge/go.arpabet.com/raft-badger.svg)](https://pkg.go.dev/go.arpabet.com/raft-badger)
+
 A [BadgerDB](https://github.com/dgraph-io/badger) backend for [HashiCorp Raft](https://github.com/hashicorp/raft).
 
 `raft-badger` implements the `raft.LogStore` and `raft.StableStore` interfaces on
