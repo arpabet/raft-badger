@@ -8,10 +8,10 @@ package raftbadger
 import (
 	"encoding/binary"
 	"errors"
-	"fmt"
 
 	"github.com/dgraph-io/badger/v4"
 	"github.com/hashicorp/raft"
+	"golang.org/x/xerrors"
 )
 
 type stableStore struct {
@@ -70,7 +70,7 @@ func (t *stableStore) getImpl(key, dst []byte) ([]byte, error) {
 
 	data, err := item.ValueCopy(dst)
 	if err != nil {
-		return nil, fmt.Errorf("raftbadger: fetch value for key %q failed: %w", rawKey, err)
+		return nil, xerrors.Errorf("raftbadger: fetch value for key %q failed: %w", rawKey, err)
 	}
 
 	// Coalesce an empty stored value with the missing-key case so callers see a
@@ -103,7 +103,7 @@ func (t *stableStore) GetUint64(key []byte) (uint64, error) {
 		return 0, nil
 	}
 	if len(data) != 8 {
-		return 0, fmt.Errorf("raftbadger: corrupt uint64 value for key %q: have %d bytes, want 8", key, len(data))
+		return 0, xerrors.Errorf("raftbadger: corrupt uint64 value for key %q: have %d bytes, want 8", key, len(data))
 	}
 
 	return binary.BigEndian.Uint64(data), nil

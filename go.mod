@@ -6,6 +6,7 @@ require (
 	github.com/dgraph-io/badger/v4 v4.9.2
 	github.com/hashicorp/raft v1.7.3
 	github.com/stretchr/testify v1.11.1
+	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da
 	google.golang.org/protobuf v1.36.11
 )
 

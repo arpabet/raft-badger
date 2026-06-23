@@ -12,6 +12,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 	raftbadger "go.arpabet.com/raft-badger"
+	"golang.org/x/xerrors"
 )
 
 func TestUint64Operations(t *testing.T) {
@@ -155,7 +156,7 @@ func TestStableStoreConcurrent(t *testing.T) {
 					return
 				}
 				if string(got) != string(want) {
-					errCh <- fmt.Errorf("key %q: got %q want %q", key, got, want)
+					errCh <- xerrors.Errorf("key %q: got %q want %q", key, got, want)
 					return
 				}
 			}
